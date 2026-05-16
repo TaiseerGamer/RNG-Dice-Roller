@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RNG Dice Roller</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🎲 RNG Dice Roller</h1>
+  <div class="dice" onclick="rollDice()">🎲</div>
+  <p>Coins: <span id="coins">0</span></p>
+
+  <div class="shop">
+    <button class="upgrade" onclick="buyUpgrade('luck')">Upgrade Luck (Cost: 50)</button>
+    <button class="upgrade" onclick="buyUpgrade('multiplier')">Upgrade Multiplier (Cost: 100)</button>
+  </div>
+
+  <div class="log" id="log"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

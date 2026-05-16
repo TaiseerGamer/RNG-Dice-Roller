@@ -1,0 +1,48 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #222;
+  color: #fff;
+}
+
+h1 {
+  color: gold;
+}
+
+.dice {
+  width: 120px;
+  height: 120px;
+  background: #444;
+  border-radius: 20px;
+  display: inline-block;
+  line-height: 120px;
+  font-size: 40px;
+  cursor: pointer;
+  margin: 20px;
+  box-shadow: 0 0 10px #000;
+}
+
+.shop {
+  margin: 20px;
+}
+
+.upgrade {
+  margin: 10px;
+  padding: 10px;
+  background: #555;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  border: none;
+}
+
+.log {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 20px auto;
+  width: 400px;
+  background: #333;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: left;
+}
