@@ -3,12 +3,16 @@ let luck = 1;
 let multiplier = 1;
 
 const rarities = [
-  {name: "Common", chance: 50, reward: 5},
-  {name: "Uncommon", chance: 30, reward: 15},
+  {name: "Common", chance: 45, reward: 5},
+  {name: "Uncommon", chance: 25, reward: 15},
   {name: "Rare", chance: 15, reward: 50},
-  {name: "Epic", chance: 4, reward: 150},
-  {name: "Legendary", chance: 1, reward: 500}
+  {name: "Epic", chance: 8, reward: 150},
+  {name: "Legendary", chance: 5, reward: 500},
+  {name: "Mythic", chance: 1.5, reward: 1500},
+  {name: "Divine", chance: 0.5, reward: 5000}
 ];
+
+const elements = ["🔥 Fire", "💧 Water", "🌿 Nature", "⚡ Lightning", "🌑 Shadow"];
 
 function rollDice() {
   let roll = Math.random() * 100;
@@ -21,10 +25,14 @@ function rollDice() {
       break;
     }
   }
+
+  // Random element flavor
+  let element = elements[Math.floor(Math.random() * elements.length)];
+
   let earned = result.reward * multiplier;
   coins += earned;
   document.getElementById("coins").innerText = coins;
-  log(`Rolled ${result.name}! Earned ${earned} coins.`);
+  log(`Rolled ${result.name} (${element})! Earned ${earned} coins.`);
 }
 
 function buyUpgrade(type) {
