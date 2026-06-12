@@ -46,3 +46,18 @@ h1 {
   border-radius: 10px;
   text-align: left;
 }
+
+#achievements {
+  list-style: none;
+  padding: 0;
+  margin: 10px auto;
+  width: 400px;
+  text-align: left;
+}
+
+#achievements li {
+  background: #444;
+  margin: 5px 0;
+  padding: 8px;
+  border-radius: 6px;
+}

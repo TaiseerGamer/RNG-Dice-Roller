@@ -14,6 +14,13 @@ const rarities = [
 
 const elements = ["🔥 Fire", "💧 Water", "🌿 Nature", "⚡ Lightning", "🌑 Shadow"];
 
+let achievements = {
+  firstRoll: false,
+  rich: false,
+  legendaryRoll: false,
+  divineRoll: false
+};
+
 function rollDice() {
   let roll = Math.random() * 100;
   let cumulative = 0;
@@ -26,13 +33,13 @@ function rollDice() {
     }
   }
 
-  // Random element flavor
   let element = elements[Math.floor(Math.random() * elements.length)];
-
   let earned = result.reward * multiplier;
   coins += earned;
   document.getElementById("coins").innerText = coins;
   log(`Rolled ${result.name} (${element})! Earned ${earned} coins.`);
+
+  checkAchievements(result);
 }
 
 function buyUpgrade(type) {
@@ -53,4 +60,31 @@ function buyUpgrade(type) {
 function log(message) {
   const logDiv = document.getElementById("log");
   logDiv.innerHTML = `<p>${message}</p>` + logDiv.innerHTML;
+}
+
+function checkAchievements(result) {
+  if (!achievements.firstRoll) {
+    achievements.firstRoll = true;
+    unlockAchievement("First Roll – You rolled your first dice!");
+  }
+  if (coins >= 1000 && !achievements.rich) {
+    achievements.rich = true;
+    unlockAchievement("Rich – Earned 1000 coins!");
+  }
+  if (result.name === "Legendary" && !achievements.legendaryRoll) {
+    achievements.legendaryRoll = true;
+    unlockAchievement("Legendary Luck – Rolled a Legendary!");
+  }
+  if (result.name === "Divine" && !achievements.divineRoll) {
+    achievements.divineRoll = true;
+    unlockAchievement("Divine Blessing – Rolled a Divine!");
+  }
+}
+
+function unlockAchievement(text) {
+  const list = document.getElementById("achievements");
+  const item = document.createElement("li");
+  item.textContent = text;
+  list.appendChild(item);
+  log(`🏆 Achievement Unlocked: ${text}`);
 }

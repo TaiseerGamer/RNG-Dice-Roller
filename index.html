@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>RNG Dice Roller v0.0.2</title>
+  <title>RNG Dice Roller v0.0.3</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🎲 RNG Dice Roller v0.0.2</h1>
+  <h1>🎲 RNG Dice Roller v0.0.3</h1>
   <div class="dice" onclick="rollDice()">🎲</div>
   <p>Coins: <span id="coins">0</span></p>
 
@@ -14,6 +14,9 @@
     <button class="upgrade" onclick="buyUpgrade('luck')">Upgrade Luck (Cost: 50)</button>
     <button class="upgrade" onclick="buyUpgrade('multiplier')">Upgrade Multiplier (Cost: 100)</button>
   </div>
+
+  <h2>🏆 Achievements</h2>
+  <ul id="achievements"></ul>
 
   <div class="log" id="log"></div>
 
